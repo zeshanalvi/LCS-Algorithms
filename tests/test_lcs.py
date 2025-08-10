@@ -6,7 +6,7 @@ import os
 # Add project root to sys.path so imports work
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from lcs import lcsDP, mlcsdp, mlcsdpa, RAA, rrmlcs, TA, TBA
+from lcs_algorithms import lcsDP, mlcsdp, mlcsdpa, RAA, rrmlcs, TA, TBA
 
 def test_lcs_simple():
     sequences = ["abcde", "abfde", "abgde"]
