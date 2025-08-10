@@ -1,4 +1,3 @@
-import random, string
 def generate_transition_matrix(S, Sigma):
     """
     Generates the transition matrix for the given sequences and alphabet.
@@ -72,14 +71,17 @@ def validVal(ary,n):
     return max(ary)<n
 
 def lcs_back(D,sequences):
+    #print("Computing LCS")
     maxd=0
     lcs_result = []
     K=len(D)-2
-    if(len(D)<2):
+    if(len(D)<=2):
         return lcs_result
-    if(len(D[len(D)-2])):
-        return lcs_result
+    #if(len(D[len(D)-2])):
+        #return lcs_result
     element=D[K].pop()
+    if(element):
+        lcs_result=[sequences[0][element[0]]]
     #find_child(e,ary)
     for k in range(len(D)-3,-1,-1):
         if(maxd<len(D[k])):
@@ -133,5 +135,13 @@ def generateD_IALCS(sequences,Sigma):
             break
     return D
 def rrmlcs(sequences,Sigma):
+    if(len(sequences)==0):
+        return []
+    if(len(sequences)==1):
+        return list(sequences[0])
+    if any(len(s) == 0 for s in sequences):
+        return []
     D=generateD_IALCS(sequences,Sigma)
-    return lcs_back(D,sequences)
+    lcs1=lcs_back(D,sequences)
+    print(lcs1)
+    return lcs1

@@ -1,5 +1,3 @@
-import random, string
-      
 def generate_transition_matrix(S, Sigma):
     """
     Generates the transition matrix for the given sequences and alphabet.

@@ -1,6 +1,3 @@
-import multiprocessing
-from itertools import combinations
-
 def lcs_pairwise(seq1, seq2):
     len1, len2 = len(seq1), len(seq2)
     dp = [[0] * (len2 + 1) for _ in range(len1 + 1)]
@@ -18,12 +15,10 @@ def lcs_worker(seq_pair):
     return lcs_pairwise(seq_pair[0], seq_pair[1])
 
 def TA(sequences):
-    pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
-    sequence_pairs = list(combinations(sequences, 2))
-    lcs_lengths = pool.map(lcs_worker, sequence_pairs)
-    
-    pool.close()
-    pool.join()
-
-    return max(lcs_lengths)
+    max_lcs=0
+    for i in range(1,int(len(sequences)/2)):
+        lcs_length=lcs_worker(sequences[(2*i)-1:(2*i)-2])
+        if(lcs_length>max_lcs):
+            max_lcs=lcs_length
+    return max_lcs
 

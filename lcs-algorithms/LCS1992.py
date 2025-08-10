@@ -1,4 +1,3 @@
-import string
 def lcsDP(seq1, seq2):
     m = len(seq1)
     n = len(seq2)

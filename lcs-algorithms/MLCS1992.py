@@ -34,4 +34,4 @@ def mlcsdp(sequences):
         return ""
 
     lcs = recover_lcs(tuple(length for length in lengths))
-    return lcs_length, lcs
+    return lcs
