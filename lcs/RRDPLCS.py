@@ -1,5 +1,4 @@
 import random, string
-      
 def generate_transition_matrix(S, Sigma):
     """
     Generates the transition matrix for the given sequences and alphabet.
@@ -92,8 +91,7 @@ def lcs_back(D,sequences):
             lcs_result=[sequences[0][element[0]]]+lcs_result
     #print(maxd)
     return lcs_result
-
-def generateD_MLCS2011(sequences,Sigma):
+def generateD_IALCS(sequences,Sigma):
     d = len(sequences)
     k = 0
     #print("Pars",Pars)
@@ -108,33 +106,32 @@ def generateD_MLCS2011(sequences,Sigma):
         D[k + 1] = set()
         Pars=gen_Pars(Sigma,d)
         for q in D[k]:
-            Parall=set()
             for e in Sigma:
                 p = parents(q, e, T)
                 #print(e," Parent of ",q," is ",p)
-                if validVal(p,n):
-                    Parall.add(p)
-            B=removeMax(Parall)
-            #print("B\t",B)
-            for p in B:
-                #if p not in D[k] and validVal(p,n):
-                e=sequences[0][p[0]]
-                #print(k,p,e)
-                Pars[e].add(p)
-                #print("Pars\t",Pars)
+                #print(type(D[k+1]),type(p))
+                #print("P and n\t",p,n)
+                if p not in D[k] and validVal(p,n):
+                    #print(len(Pars),p[0])
+                    Pars[e].add(p)
+                    #print("Pars\t",Pars)
         for pare in Pars:
             #print("All parents\t",Pars)
             #print("Processing",pare,"\t",Pars[pare])
             
-            Pars[pare]=removeMax(Pars[pare])
+            #Pars[pare]=removeMax(Pars[pare])
             
             #print("Non Max Parents\t",Pars)
             for elem in Pars[pare]:
-                D[k + 1].add(elem)
+                if(elem not in D[k+1]):
+                    D[k + 1].add(elem)
         #print("D when k is\t",k,"\t",D)
         D[k+1]=removeMax(D[k+1])
-        #print("D when k is\t",k+1,"\t",len(D[k+1]))
+        #print("D when k is\t",k,"\t",D)
         k += 1
         if(k>n):
             break
     return D
+def rrmlcs(sequences,Sigma):
+    D=generateD_IALCS(sequences,Sigma)
+    return lcs_back(D,sequences)

@@ -1,5 +1,5 @@
 import string
-def DP_1992(seq1, seq2):
+def lcsDP(seq1, seq2):
     m = len(seq1)
     n = len(seq2)
     

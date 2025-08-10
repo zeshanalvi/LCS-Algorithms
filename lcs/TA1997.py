@@ -17,7 +17,7 @@ def lcs_pairwise(seq1, seq2):
 def lcs_worker(seq_pair):
     return lcs_pairwise(seq_pair[0], seq_pair[1])
 
-def TA_1997(sequences):
+def TA(sequences):
     pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
     sequence_pairs = list(combinations(sequences, 2))
     lcs_lengths = pool.map(lcs_worker, sequence_pairs)

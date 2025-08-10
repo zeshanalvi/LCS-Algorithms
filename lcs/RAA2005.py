@@ -60,7 +60,7 @@ def parallel_mslcs(sequences,Sigma):
     return ''.join(LCS)
 
 # Function to take sequences as input and find LCS
-def RAA_2005(sequences,Sigma):
+def RAA(sequences,Sigma):
     #print(list(Sigma))
     global I, J, K
     I = J = K = 0

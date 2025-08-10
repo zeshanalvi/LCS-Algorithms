@@ -1,4 +1,4 @@
-def mlcs1992(sequences):
+def mlcsdp(sequences):
     num_sequences = len(sequences)
     lengths = [len(seq) for seq in sequences]
 
