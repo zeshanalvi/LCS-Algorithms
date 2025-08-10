@@ -142,12 +142,12 @@ print(result)
 ## Installation
 You can install via:
 ```bash
-pip install lcs
+pip install lcs_algorithms
 ```
 or you can clone and install it via:
 ```bash
-git clone https://github.com/zeshanalvi/lcs-algorithms.git
-cd lcs-algorithms
+git clone https://github.com/zeshanalvi/lcs_algorithms.git
+cd lcs_algorithms
 pip install .
 ```
 
