@@ -1,4 +1,13 @@
 # LCS Algorithms Library
+<p align="center">
+  <a href="https://pypi.org/project/LCS-Algorithms/"><img src="https://img.shields.io/pypi/v/lcs-algorithms.svg" alt="PyPI Version"></a>
+  <a href="https://github.com/zeshanalvi/LCS_Algorithms/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/lcs-algorithms.svg" alt="License"></a>
+  <a href="https://pepy.tech/project/LCS-Algorithms/"><img src="https://static.pepy.tech/badge/lcs-algorithms" alt="Downloads"></a>
+  <a href="https://pypi.org/project/LCS-Algorithms/"><img src="https://img.shields.io/pypi/pyversions/lcs-algorithms.svg" alt="Python Versions"></a>
+  <a href="https://github.com/zeshanalvi/lcs_algorithms/stargazers"><img src="https://img.shields.io/github/stars/zeshanalvi/lcs_algorithms?style=social" alt="GitHub Stars"></a>
+  <a href="https://github.com/zeshanalvi/lcs_algorithms/commits/main"><img src="https://img.shields.io/github/last-commit/zeshanalvi/lcs_algorithms.svg" alt="Last Commit"></a>
+  <a href="https://github.com/zeshanalvi/lcs_algorithms/issues"><img src="https://img.shields.io/github/issues/zeshanalvi/lcs_algorithms.svg" alt="Open Issues"></a>
+</p>
 
 A Python library implementing multiple algorithms for computing the **Longest Common Subsequence (LCS)** between sequences (strings), including multi-sequence LCS.
 
